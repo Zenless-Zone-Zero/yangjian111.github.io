@@ -6,17 +6,73 @@
     <link rel="stylesheet"  href="css/main.css">
     <script src="js/main.js"></script>
     <script src="js/jquery.min.js"></script>
+    <script src="layim/dist/layui.js"></script>
+    <script src="layim/src/lay/modules/jquery.js"></script>
+   <link rel="stylesheet" href="layim/dist/css/layui.css">
 </head>
 <body>
 <h1>hello ,how are you!</h1>
+<i id="backimg" class="layui-icon layui-icon-theme" style="font-size: 50px; color: white;position: absolute; left: 50px; top: 150px;">
+    <span style="font-size: 20px;vertical-align:middle">æ›´æ¢å£çº¸</span>
+</i>
+
+
+<link rel="stylesheet" type="text/css" href="2d/waifu.css">
+<div class="waifu" id="waifu" style="z-index: 99999;">
+	<div class="waifu-tips" style="opacity: 1;"></div>
+	<canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+	<div class="waifu-tool">
+		<span class="fui-home"></span>
+		<span class="fui-chat"></span>
+		<span class="fui-eye"></span>
+		<span class="fui-user"></span>
+		<span class="fui-photo"></span>
+		<span class="fui-info-circle"></span>
+		<span class="fui-cross"></span>
+	</div>
+</div>
+<script src="2d/live2d.js" ></script>
+<script src="2d/waifu-tips.js" ></script>
+<script type="text/javascript">initModel()</script>
+<link rel="stylesheet" type="text/css" href="https://files.cnblogs.com/files/yjlblog/flat-ui.min.css"/>
 </body>
 </html>
 
 <script>
+ layui.use('layim', function(layim){
+        var $ = layui.$;
+        var i=1;
+        csshtml={
+            "background-image":"url(/images/chat/img"+i+".jpg)"
+        }
+        $("html").css(csshtml);
+        /*var cssHtml={
+            backgroundImage:url("/cao.jpg"),
+        }
+        $("html").css(cssHtml);*/
+        /* console.log($("div"))*/
+        $("#backimg").click(function () {
+            $("html").css("background-image","")
+            i++;
+            if(i==8){
+                i=1;
+            }
+            csshtml={
+                "background-image":"url(/images/chat/img"+i+".jpg)"
+            }
+            $("html").css(csshtml);
+            /*location.reload();*/
+            console.log("img"+i);
+        })
+        /* $("html").css("background-image","url(/images/chat/img"+i+".jpg)");*/
+}
+
+
+
    var a_idx = 0;
     jQuery(document).ready(function($) {
         $("body").click(function(e) {
-            var a = new Array("¡ïjava¡ï","¡ïhtml¡ï","¡ïjQuery¡ï","¡ïcss¡ï","¡ïjs¡ï","¡ïoracle¡ï","¡ïmybatis¡ï","¡ïspring¡ï","¡ïspringBoot¡ï","¡ïspringMVC¡ï","¡ïhibernate¡ï","¡ïstruts2¡ï","¡ïredis¡ï","¡ïjsp¡ï","¡ïwebsocket¡ï","¡ïshiro¡ï","¡ïlinux¡ï");
+            var a = new Array("Â¡Ã¯javaÂ¡Ã¯","Â¡Ã¯htmlÂ¡Ã¯","Â¡Ã¯jQueryÂ¡Ã¯","Â¡Ã¯cssÂ¡Ã¯","Â¡Ã¯jsÂ¡Ã¯","Â¡Ã¯oracleÂ¡Ã¯","Â¡Ã¯mybatisÂ¡Ã¯","Â¡Ã¯springÂ¡Ã¯","Â¡Ã¯springBootÂ¡Ã¯","Â¡Ã¯springMVCÂ¡Ã¯","Â¡Ã¯hibernateÂ¡Ã¯","Â¡Ã¯struts2Â¡Ã¯","Â¡Ã¯redisÂ¡Ã¯","Â¡Ã¯jspÂ¡Ã¯","Â¡Ã¯websocketÂ¡Ã¯","Â¡Ã¯shiroÂ¡Ã¯","Â¡Ã¯linuxÂ¡Ã¯");
             var $i = $("<span></span>").text(a[a_idx]);
             a_idx = (a_idx + 1) % a.length;
             var x = e.pageX,
