@@ -4,17 +4,10 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet"  href="css/main.css">
-    <script src="layim/dist/layui.js"></script>
-    <script src="layim/src/lay/modules/jquery.js"></script>
-   <link rel="stylesheet" href="layim/dist/css/layui.css">
+    <script src="js/jquery.min.js"></script>
 </head>
 <body >
 <h1>hello ,how are you!</h1>
-<i id="backimg" class="layui-icon layui-icon-theme" style="font-size: 50px; color: white;position: absolute; left: 50px; top: 150px;">
-    <span style="font-size: 20px;vertical-align:middle">更换壁纸</span>
-</i>
-
-
 <link rel="stylesheet" type="text/css" href="2d/waifu.css">
 <div class="waifu" id="waifu" style="z-index: 99999;">
 	<div class="waifu-tips" style="opacity: 1;"></div>
@@ -37,34 +30,6 @@
 </html>
 
 <script>
-/* layui.use('layim', function(layim){
-        var $ = layui.$;
-        var i=1;
-        csshtml={
-            "background-image":"url(images/chat/img"+i+".jpg)"
-        }
-        $("html").css(csshtml);
-        /*var cssHtml={
-            backgroundImage:url("/cao.jpg"),
-        }
-        $("html").css(cssHtml);*/
-        /* console.log($("div"))*/
-        $("#backimg").click(function () {
-            $("html").css("background-image","")
-            i++;
-            if(i==8){
-                i=1;
-            }
-            csshtml={
-                "background-image":"url(images/chat/img"+i+".jpg)"
-            }
-            $("html").css(csshtml);
-            /*location.reload();*/
-            console.log("img"+i);
-        })
-        /* $("html").css("background-image","url(/images/chat/img"+i+".jpg)");*/
-
-  }*/
       
         var a_idx = 0;
     jQuery(document).ready(function($) {
