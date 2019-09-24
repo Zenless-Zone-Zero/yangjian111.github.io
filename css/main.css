@@ -1,4 +1,9 @@
 body{
-    color: blue;
+    color: gold;
+}
+
+#backimg{
+	width: 130px;height: 35px;
+	font-size: 24px;
 }
 
