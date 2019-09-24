@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-image: url(images/chat/img2.jpg)">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -8,7 +8,7 @@
     <script src="layim/src/lay/modules/jquery.js"></script>
    <link rel="stylesheet" href="layim/dist/css/layui.css">
 </head>
-<body style="background-image: url(images/chat/img2.jpg)">
+<body >
 <h1>hello ,how are you!</h1>
 <i id="backimg" class="layui-icon layui-icon-theme" style="font-size: 50px; color: white;position: absolute; left: 50px; top: 150px;">
     <span style="font-size: 20px;vertical-align:middle">更换壁纸</span>
@@ -37,7 +37,7 @@
 </html>
 
 <script>
- layui.use('layim', function(layim){
+/* layui.use('layim', function(layim){
         var $ = layui.$;
         var i=1;
         csshtml={
@@ -64,8 +64,8 @@
         })
         /* $("html").css("background-image","url(/images/chat/img"+i+".jpg)");*/
 
-   
-   
+  }*/
+      
         var a_idx = 0;
     jQuery(document).ready(function($) {
         $("body").click(function(e) {
@@ -95,7 +95,7 @@
     });
    
    
-}
+
 
 
 </script>
