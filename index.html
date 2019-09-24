@@ -7,7 +7,7 @@
     <script src="js/jquery.min.js"></script>
 </head>
 <body >
-<h1>hello ,how are you!</h1>
+<h1 id="backimg">切换壁纸</h1>
 <link rel="stylesheet" type="text/css" href="2d/waifu.css">
 <div class="waifu" id="waifu" style="z-index: 99999;">
 	<div class="waifu-tips" style="opacity: 1;"></div>
@@ -30,7 +30,35 @@
 </html>
 
 <script>
-      
+
+       var i=1;
+        csshtml={
+            "background-image":"url(images/chat/img"+i+".jpg)"
+        }
+        $("html").css(csshtml);
+        /*var cssHtml={
+            backgroundImage:url("/cao.jpg"),
+        }
+        $("html").css(cssHtml);*/
+        /* console.log($("div"))*/
+        $("#backimg").click(function () {
+            $("html").css("background-image","")
+            i++;
+            if(i==8){
+                i=1;
+            }
+            csshtml={
+                "background-image":"url(images/chat/img"+i+".jpg)"
+            }
+            $("html").css(csshtml);
+            /*location.reload();*/
+            console.log("img"+i);
+        })
+        /* $("html").css("background-image","url(/images/chat/img"+i+".jpg)");*/
+
+
+
+
         var a_idx = 0;
     jQuery(document).ready(function($) {
         $("body").click(function(e) {
